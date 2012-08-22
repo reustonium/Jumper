@@ -7,11 +7,12 @@ package
 	public class JumperLevel extends World
 	{
 		public var jLevel:GUIText;
+		public var level:int;
 		
 		public function JumperLevel(level:int) 
 		{
-			jLevel = new GUIText(new Text("Level: " + level), 310, 0);
-			
+			jLevel = new GUIText(new Text("Level: " + level), 300, 0);
+						
 			add(new Sky);
 			add(new Plane);
 			add(jLevel);

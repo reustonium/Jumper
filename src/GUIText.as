@@ -5,10 +5,11 @@ package
 	
 	public class GUIText extends Entity 
 	{
+		public var text:String;
 		
-		public function GUIText(txt:Text, xPos:int, yPos:int) 
+		public function GUIText(text:Text, xPos:int, yPos:int) 
 		{
-			super(xPos, yPos, txt);
+			super(xPos, yPos, text);
 		}
 	
 		public function Update(newText:String):void

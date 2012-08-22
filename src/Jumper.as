@@ -12,7 +12,8 @@ package
 		[Embed(source = 'assets/jumper.png')] private const JUMPER:Class;
 		
 		public var jumperScore:int = 0;
-		public var landed:Boolean = false;	
+		public var levelScore:int = 0;
+		public var isFalling:Boolean = true;	
 		public var jScore:GUIText;
 		public var image:Image;
 		
@@ -30,7 +31,7 @@ package
 			setHitbox(16, 16, -2, -2);
 			type = "jumper";
 			
-			jScore = new GUIText(new Text("Score: " + jumperScore), 310, 15);
+			jScore = new GUIText(new Text("Score: " + jumperScore), 300, 15);
 			FP.world.add(jScore);
 		}
 		
@@ -38,39 +39,58 @@ package
 		{
 			jScore.Update("Score: " + jumperScore);
 			
+			// Falling
+			if (isFalling)
+			{
+				Falling();
+			}
+						
+			else 
+			{
+				FinishedLevel();
+			}
+			
+		}
+		
+		public function Falling():void
+		{
+			// Hit's Cloud
 			if (collide("cloud", x, y))
 			{
 				jumperScore -= 5;
 				image.color = 0xff0000;
 			}
-			
 			else 
 			{
 				image.color = 0xffffff;
 			}
 			
+			// Lands on ground
 			if (collide("ground", x, y))
 			{
-				landed = true;
-				jumperScore += 100;
+				isFalling = false;
 			}
 			
-			if (!landed)
+			// Falling Update
+			y += 50 * FP.elapsed;
+			jumperScore += 1;
+				
+			if (Input.check("Right") && x < 400 - width)
 			{
-				y += 50 * FP.elapsed;
-				jumperScore += 1;
-				
-				if (Input.check("Right") && x < 400 - width)
-				{
-					x += 35 * FP.elapsed;
-				}
-				
-				if (Input.check("Left") && x > 0)
-				{
-					x -= 35 * FP.elapsed;
-				}
+				x += 35 * FP.elapsed;
 			}
-			
+			if (Input.check("Left") && x > 0)
+			{
+				x -= 35 * FP.elapsed;
+			}
+		}
+		
+		public function FinishedLevel():void
+		{
+			levelScore = jumperScore + 100;		
+			jScore.Update("Level Score: " + levelScore);
+			jScore.x = 250;
+
 		}
 		
 	}

@@ -10,7 +10,7 @@ package
 			super(400, 800, 60, false);
 			FP.world = new JumperLevel(5);
 			
-			FP.console.enable();
+			//FP.console.enable();
 		}
 		
 	}
