@@ -33,7 +33,7 @@ package
 					height += 50;
 				}
 				
-				add(new Cloud(width, height));
+				add(new Cloud(width, height, 10));
 			}
 		}
 		
