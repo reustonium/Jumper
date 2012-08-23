@@ -3,6 +3,9 @@ Jumper commit 1
 Alpine Indie
 
 Change Log:
+Version 0.1.15
+[Fixed] Code Cleanup
+	
 Version 0.1.1
 [Added] Floating Clouds
 [Fixed] Landing Caused Score Problem
@@ -17,8 +20,10 @@ Known Issues:
 
 
 Version history:
-08/22/2012 Commit 1
-
+0.1.15	08/23/12
+0.1.1   08/23/12
+0.1.0	08/22/12
+0.0.0	08/22/12
 
 Contact us at:
 Alpine Indie

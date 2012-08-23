@@ -1,4 +1,4 @@
-package  
+package scene
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
@@ -13,7 +13,7 @@ package
 		
 		public function Plane() 
 		{
-				graphic = new Image(PLANE);
+				this.graphic = new Image(PLANE);
 				this.x = 450;
 				this.y = 15;
 		}
@@ -22,15 +22,10 @@ package
 		{
 			if (x < -10) 
 			{
-				if (hasJumper)
-				{
-					x = 500;
-				}
+				if (hasJumper) x = 500;
 				
-				else 
-				{
-					FP.world.remove(this);
-				}
+				else FP.world.remove(this);
+				
 			}
 			
 			x -= 50 * FP.elapsed;
@@ -45,7 +40,5 @@ package
 				
 			}
 		}
-		
 	}
-
 }

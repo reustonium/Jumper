@@ -5,7 +5,6 @@ package
 	
 	public class GUIText extends Entity 
 	{
-		public var text:String;
 		
 		public function GUIText(text:Text, xPos:int, yPos:int) 
 		{
