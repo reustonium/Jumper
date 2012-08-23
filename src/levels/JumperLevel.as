@@ -3,6 +3,7 @@ package levels
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Text;
+	import scene.*;
 	
 	public class JumperLevel extends World
 	{

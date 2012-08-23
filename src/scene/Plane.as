@@ -8,7 +8,7 @@ package scene
 	
 	public class Plane extends Entity
 	{
-		[Embed(source = 'assets/plane.png')] private const PLANE:Class;
+		[Embed(source = '../assets/plane.png')] private const PLANE:Class;
 		public var hasJumper:Boolean = true;
 		
 		public function Plane() 

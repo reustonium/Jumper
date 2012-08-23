@@ -9,7 +9,7 @@ package scene
 	
 	public class Jumper extends Entity
 	{
-		[Embed(source = 'assets/jumper.png')] private const JUMPER:Class;
+		[Embed(source = '../assets/jumper.png')] private const JUMPER:Class;
 		
 		public var jumperScore:int = 0;
 		public var levelScore:int = 0;

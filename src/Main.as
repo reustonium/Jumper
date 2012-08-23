@@ -1,8 +1,8 @@
 package 
 {
 	import net.flashpunk.Engine;
-	import net.flashpunk.FP;	
-	import levels.Menu;
+	import net.flashpunk.FP;
+	import levels.JumperLevel;
 	
 	public class Main extends Engine 
 	{
@@ -10,8 +10,7 @@ package
 		{
 			super(400, 800, 60, false);
 
-			FP.world = new Menu();
-			//FP.world = new JumperLevel(5);
+			FP.world = new JumperLevel(5);
 			
 			FP.console.enable();
 		}

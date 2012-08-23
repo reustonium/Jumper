@@ -6,7 +6,7 @@ package scene
 	
 	public class Cloud extends Entity
 	{
-		[Embed(source = 'assets/cloud.png')] private const CLOUD:Class;
+		[Embed(source = '../assets/cloud.png')] private const CLOUD:Class;
 		protected var delay:Number = 0.12;
 		protected var counter:Number = 0;
 		protected var offset:Number = 0;
